@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
@@ -49,6 +50,7 @@ import "../styles/global.css";
     <link rel="canonical" href="https://eatrainbows.co" />
   </head>
   <body>
+    <Analytics />
     <slot />
   </body>
 </html>
