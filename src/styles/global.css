@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@theme {
+  --animate-spin-slow: spin 4s linear infinite;
+}
