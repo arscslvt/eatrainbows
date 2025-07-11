@@ -1,7 +1,18 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useAnimate } from "motion/react";
 
-const buildingWhat = ["fun", "coolness", "magic", "needings"];
+const buildingWhat = [
+  "fun",
+  "coolness",
+  "magic",
+  "needings",
+  "creativity",
+  "innovation",
+  "experiences",
+  "wonder",
+  "discovery",
+  "rainbows",
+];
 
 // Funzione helper per misurare il testo
 const measureTextWidth = (text: string) => {
