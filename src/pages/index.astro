@@ -1,11 +1,44 @@
 ---
-import MakingFun from '../components/MakingFun.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import dayjs from "dayjs";
+import { ArrowUpRight } from "@phosphor-icons/react";
+import BuildingText from "../components/BuildingText";
+import Prism from "../components/Prism.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<MakingFun />
+  <div class="bg-zinc-100 min-h-dvh flex flex-col">
+    <div class="flex px-4 py-4">
+      <div class="flex-1 flex justify-end">
+        <a
+          href="https://github.com/eatrainbows"
+          class="underline text-sm"
+          target="_blank"
+          rel="noopener"
+          >View on GitHub <ArrowUpRight size={26} className="inline p-1" />
+        </a>
+      </div>
+    </div>
+
+    <div class="flex-1 flex justify-center items-center">
+      <div class="flex flex-col items-center">
+        <div class="relative pointer-events-none">
+          <Prism />
+        </div>
+        <div class="mt-4 relativ">
+          <p class="font-medium h-[24.5px]">
+            We’re building <BuildingText client:load />.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-4 px-4">
+      <p class="text-xs text-center text-zinc-400">
+        EatRainbows, Team — {dayjs().format("YYYY")} ©
+      </p>
+    </div>
+  </div>
 </Layout>
