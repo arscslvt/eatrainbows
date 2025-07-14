@@ -4,6 +4,8 @@ import dayjs from "dayjs";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import BuildingText from "../components/BuildingText";
 import Prism from "../components/Prism.astro";
+import { Button } from "@/components/ui/button";
+import Icon from "@/components/ui/icon";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 ---
@@ -27,12 +29,31 @@ import Prism from "../components/Prism.astro";
         <div class="relative pointer-events-none">
           <Prism />
         </div>
-        <div class="mt-4 relativ">
+        <div class="mt-4 relative">
           <p class="font-medium h-[24.5px]">
             We’re building <BuildingText client:load />.
           </p>
         </div>
       </div>
+    </div>
+
+    <div
+      class="relative z-40 flex mt-4 gap-4 pointer-events-auto justify-center"
+    >
+      <a
+        href="mailto:hello@eatrainbows.co?subject=Hey%20EatRainbows%20team%2C%20got%20an%20idea!&body=Yo%20EatRainbows%20team%2C%0AI've%20got%20something%20cool%20in%20mind%20and%20wanted%20to%20ask%20if%20you%20could%20make%20it%20happen.%20Hit%20me%20back%20when%20you%20can!%0A%0AThanks%20💖"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          size="sm"
+          variant={"ghost"}
+          className={"hover:bg-neutral-200/30 hover:ring-1 hover:ring-neutral-200 cursor-cell"}
+        >
+          <Icon name="kitty" />
+          Ask us
+        </Button></a
+      >
     </div>
 
     <div class="py-4 px-4">
