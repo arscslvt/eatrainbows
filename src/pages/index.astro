@@ -1,6 +1,10 @@
 ---
 import { Button } from "@/components/ui/button";
 import MainLayout from "../layouts/Main.layout.astro";
+import { Image } from "astro:assets";
+
+import MainRadialBackground from "../assets/backgrounds/radial-blue-orange.jpg";
+import MainPagePathStrategy from "../assets/illustrations/textuals/main-page-path-strategy.svg";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 ---
@@ -38,8 +42,8 @@ import MainLayout from "../layouts/Main.layout.astro";
       <div
         class="absolute inset-0 w-full h-full rounded-2xl overflow-hidden border border-[#e1dcd5] shadow-lg pointer-events-none select-none"
       >
-        <img
-          src="/src/assets/backgrounds/radial-blue-orange.jpg"
+        <Image
+          src={MainRadialBackground}
           alt="Radial Blue Orange Background"
           srcset=""
           class="w-full h-full object-cover pointer-events-none select-none"
@@ -49,8 +53,8 @@ import MainLayout from "../layouts/Main.layout.astro";
       <div
         class="absolute inset-0 w-full h-full rounded-2xl overflow-hidden border border-[#e1dcd5] shadow-lg pointer-events-none select-none"
       >
-        <img
-          src="/src/assets/illustrations/textuals/main-page-path-strategy.svg"
+        <Image
+          src={MainPagePathStrategy}
           alt="Main Page Path Strategy"
           srcset=""
           class="w-full h-full object-contain pointer-events-none select-none"
