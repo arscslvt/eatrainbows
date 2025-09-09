@@ -5,6 +5,9 @@
 
 @theme {
   --animate-spin-slow: spin 10s linear infinite;
+  --font-branding: "Unbounded", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Bricolage Grotesque Variable", sans-serif;
 }
 
 @theme inline {
@@ -120,5 +123,128 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.mesh-1 {
+  /* Tunable colors (OKLCH-friendly for nice interpolation) */
+  --mesh-blue-1: #0d14e1; /* deep blue */
+  --mesh-violet: #6a00ff; /* violet */
+  --mesh-orange: #ff6a57; /* warm pink/orange */
+
+  --radial-gradient: radial-gradient(
+      90% 120% at var(--cx1, 72%) var(--cy1, 48%),
+      color-mix(in oklab, var(--mesh-blue-1) 45%, transparent) 0%,
+      color-mix(in oklab, var(--mesh-orange) 85%, transparent) 38%,
+      transparent 50%
+    ),
+    radial-gradient(
+      90% 120% at var(--cx2, 28%) var(--cy2, 62%),
+      color-mix(in oklab, var(--mesh-orange) 90%, transparent) 0%,
+      color-mix(in oklab, var(--mesh-violet) 90%, transparent) 28%,
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      var(--mesh-blue-1) 0%,
+      var(--mesh-violet) 65%,
+      var(--mesh-orange) 100%
+    );
+}
+
+.mesh-2 {
+  /* Tunable colors (OKLCH-friendly for nice interpolation) */
+  --mesh-blue-1: #0d14e1; /* deep blue */
+  --mesh-violet: #6a00ff; /* violet */
+  --mesh-orange: #ff6a57; /* warm pink/orange */
+
+  --radial-gradient: radial-gradient(
+      65% 85% at var(--cx1, 50%) var(--cy1, 30%),
+      color-mix(in oklab, var(--mesh-orange) 90%, transparent) 20%,
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      var(--mesh-blue-1) 0%,
+      var(--mesh-violet) 50%,
+      var(--mesh-blue-1) 90%
+    );
+}
+
+.mesh-3 {
+  /* Tunable colors (OKLCH-friendly for nice interpolation) */
+  --mesh-rose: #f54393; /* bright rose */
+  --mesh-orange: #ff6a57; /* warm pink/orange */
+
+  --radial-gradient: radial-gradient(
+      65% 85% at var(--cx1, 50%) var(--cy1, 30%),
+      color-mix(in oklab, var(--mesh-orange) 90%, transparent) 20%,
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      var(--mesh-rose) 0%,
+      var(--mesh-orange) 50%,
+      var(--mesh-rose) 90%
+    );
+}
+
+/* Mesh gradient utilities for glossy pill buttons */
+@layer utilities {
+  .bg-mesh {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    z-index: 0;
+  }
+
+  .text-mesh {
+    position: relative;
+    z-index: 1;
+    background-image: var(--radial-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-mesh::after {
+    position: absolute;
+    content: "";
+    inset: -35%;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image: var(--radial-gradient);
+    /* Smussa i bordi delle macchie per evitare l'effetto "tre cerchi" */
+    transform: translateZ(0) scale(1.05);
+    /* animation: mesh-shift 3s ease-in-out infinite; */
+  }
+  .bg-mesh:hover::after {
+    --cx1: 74%;
+    --cy1: 44%;
+    --cx2: 24%;
+    --cy2: 66%;
+  }
+
+  @keyframes mesh-shift {
+    0% {
+      --cx1: 70%;
+      --cy1: 50%;
+      --cx2: 30%;
+      --cy2: 60%;
+    }
+    50% {
+      --cx1: 74%;
+      --cy1: 44%;
+      --cx2: 24%;
+      --cy2: 66%;
+    }
+    100% {
+      --cx1: 70%;
+      --cy1: 50%;
+      --cx2: 30%;
+      --cy2: 60%;
+    }
   }
 }

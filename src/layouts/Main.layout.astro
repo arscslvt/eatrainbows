@@ -1,0 +1,72 @@
+---
+import Toolbar from "@/components/Toolbar.astro";
+import "../styles/global.css";
+import Analytics from "@vercel/analytics/astro";
+import "@fontsource/unbounded";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/bricolage-grotesque";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>EatRainbows</title>
+    <meta
+      name="description"
+      content="Unicorns are coding something magical..."
+    />
+
+    <!-- Open Graph metadata for social media -->
+    <meta property="og:title" content="EatRainbows" />
+    <meta
+      property="og:description"
+      content="Unicorns are coding something magical..."
+    />
+    <meta
+      property="og:image"
+      content="https://opengraph.b-cdn.net/production/images/4e9a6af5-fc87-4cd6-8d6c-d6e417b2d530.png?token=uypZtyCWvqTzeRbGs6jPsJhY5g8vfC0ZWQNvLEg86nc&height=630&width=1200&expires=33280214990"
+    />
+    <meta property="og:url" content="https://eatrainbows.co" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EatRainbows" />
+    <meta
+      name="twitter:description"
+      content="Unicorns are coding something magical..."
+    />
+    <meta
+      name="twitter:image"
+      content="https://opengraph.b-cdn.net/production/images/4e9a6af5-fc87-4cd6-8d6c-d6e417b2d530.png?token=uypZtyCWvqTzeRbGs6jPsJhY5g8vfC0ZWQNvLEg86nc&height=630&width=1200&expires=33280214990"
+    />
+
+    <!-- Additional SEO metadata -->
+    <meta
+      name="keywords"
+      content="EatRainbows, coding, development, fun, unicorns, music, games"
+      aria-details="Pay attention, that's a leak 👀"
+    />
+    <link rel="canonical" href="https://eatrainbows.co" />
+
+    <meta name="theme-color" content="#F5F1EE" />
+  </head>
+  <body class="bg-[#F5F1EE] min-h-dvh">
+    <Analytics />
+    <Toolbar />
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
