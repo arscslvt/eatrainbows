@@ -4,61 +4,113 @@ import MainLayout from "../layouts/Main.layout.astro";
 import { Image } from "astro:assets";
 
 import MainRadialBackground from "../assets/backgrounds/radial-blue-orange.jpg";
-import MainPagePathStrategy from "../assets/illustrations/textuals/main-page-path-strategy.svg";
+import MainPageUnicorn from "../assets/illustrations/visuals/unicorn.png";
+import MainPageShaderRaster from "../assets/backgrounds/shader-raster.png";
 
+import ArrowPath from "@/components/svg/ArrowPath.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 ---
 
 <MainLayout>
-  <div
-    class="flex flex-row h-[calc(100dvh-theme(space.28))] px-6 pt-4 space-x-12"
-  >
-    <div class="flex flex-1 flex-col justify-end items-start gap-6">
-      <div class="space-y-2">
-        <div
-          class="px-4 h-10 rounded-full border-1 border-[#F54A00] text-lg font-medium w-max flex items-center mesh-3 text-mesh"
-        >
-          OUR SPECIALITY
-        </div>
-        <h1 class="font-heading font-medium text-6xl">
-          We can see your
-          <br />
-          <span class="text-mesh mesh-1">dreams</span> and make<br /> it real.
-        </h1>
-      </div>
-      <div class="w-full space-y-3">
-        <p class="text-neutral-500 text-lg text-right">
-          You’ll get a free mockup.<br />
-          Pay it only <span class="italic">if you like it</span>.
-        </p>
-        <div>
-          <Button variant="mesh" className="w-full h-12 mesh-2"
-            >Get a Free Consultation</Button
+  <div class="gap-16 pb-6">
+    <div
+      class="h-[calc(100dvh-theme(space.28))] flex items-center justify-center pt-4 space-x-12 relative z-10"
+    >
+      <div
+        class="flex flex-1 flex-col justify-end items-start gap-6 md:mx-36 lg:mx-64 px-12"
+      >
+        <div class="space-y-4">
+          <div
+            class="px-4 h-10 rounded-full border-2 border-rose-400 md:text-lg font-medium w-max flex items-center mesh-3 text-mesh"
           >
+            OUR SPECIALITY
+          </div>
+          <h1 class="font-branding font-medium text-5xl md:text-6xl">
+            We can see your
+            <br />
+            <span class="text-mesh mesh-1">dreams</span> and make<br /> it real.
+          </h1>
         </div>
+        <div class="w-full space-y-3">
+          <p class="text-neutral-500 text-xl text-right">
+            You’ll get a free mockup.<br />
+            Pay it only <span class="italic">if you like it</span>.
+          </p>
+          <div class="pt-4">
+            <Button
+              variant="mesh"
+              className="w-full h-14 mesh-2 rounded-[22px]"
+              style={{ boxShadow: "0 0 0px 6px rgba(255, 255, 255, 0.6)" }}
+              >Get a Free Consultation</Button
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute w-dvw h-36 md:h-80 bottom-0 md:bottom-44 left-0 right-0 z-0"
+      >
+        <Image
+          src={MainPageShaderRaster}
+          alt="Unicorn Mascot"
+          srcset=""
+          class="w-100% h-36 md:h-100% object-cover md:object-fill object-top md:object-center origin-center pointer-events-none select-none"
+        />
       </div>
     </div>
-    <div class="flex-1 relative">
-      <div
-        class="absolute inset-0 w-full h-full rounded-2xl overflow-hidden border border-[#e1dcd5] shadow-lg pointer-events-none select-none"
-      >
-        <Image
-          src={MainRadialBackground}
-          alt="Radial Blue Orange Background"
-          srcset=""
-          class="w-full h-full object-cover pointer-events-none select-none"
-        />
-      </div>
 
+    <div
+      class="flex-1 relative space-y-6 isolate rounded-[22px] px-12 lg:mx-64"
+    >
+      <div class="relative z-10 flex flex-col md:flex-row h-full gap-6">
+        <!-- <div
+          class="relative w-full rounded-xl flex-1 pointer-events-none select-none z-10"
+        >
+          <div class="relative">
+            <ArrowPath />
+          </div>
+        </div> -->
+        <div
+          class="relative w-full rounded-xl bg-[#F5F1EE]/20 border border-white/20 flex-1 pointer-events-none select-none z-10"
+        >
+          <!-- <Image
+            src={MainRadialBackground}
+            priority
+            alt="Radial Blue Orange Background"
+            srcset=""
+            class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none rounded-[12px]"
+          /> -->
+          <div class="relative flex flex-row h-full">
+            <div class="relative flex flex-1 flex-col p-9 space-y-6">
+              <h1 class="font-branding font-medium text-4xl text-white">
+                We love making<br />you shine
+              </h1>
+              <p class="text-white text-lg font-normal brightness-200">
+                that's why we have a unicorn as a mascot,<br />we need sparkles.
+              </p>
+            </div>
+
+            <div class="flex items-center justify-center">
+              <Image
+                src={MainPageUnicorn}
+                alt="Unicorn Mascot"
+                srcset=""
+                class="w-48 h-48 scale-[1.8] object-contain origin-center pointer-events-none select-none"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <div
-        class="absolute inset-0 w-full h-full rounded-2xl overflow-hidden border border-[#e1dcd5] shadow-lg pointer-events-none select-none"
+        class="relative w-full h-22 sm:h-14 bg-[#F5F1EE]/20 border border-white/20 overflow-hidden rounded-xl pointer-events-none select-none z-10"
       >
-        <Image
-          src={MainPagePathStrategy}
-          alt="Main Page Path Strategy"
-          srcset=""
-          class="w-full h-full object-contain pointer-events-none select-none"
-        />
+        <div
+          class="relative z-10 flex flex-row flex-wrap px-6 py-4 gap-2 sm:gap-8 justify-around items-center h-full font-medium text-sm md:text-base text-white font-branding"
+        >
+          <span>websites</span>
+          <span>apps</span>
+          <span>mockups</span>
+          <span>consulting</span>
+        </div>
       </div>
     </div>
   </div>

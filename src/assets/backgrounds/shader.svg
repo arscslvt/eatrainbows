@@ -1,0 +1,46 @@
+<svg width="2704" height="2207" viewBox="0 0 2704 2207" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_49_11)">
+<g filter="url(#filter0_f_49_11)">
+<ellipse cx="1360.5" cy="1048.51" rx="1352.5" ry="832.514" fill="#FCECE4"/>
+</g>
+<g filter="url(#filter1_f_49_11)">
+<ellipse cx="1360.5" cy="1159.49" rx="1352.5" ry="832.514" fill="#0D14E1"/>
+</g>
+<g filter="url(#filter2_f_49_11)">
+<ellipse cx="1360.5" cy="1067.08" rx="1352.5" ry="517.626" fill="#98390F"/>
+</g>
+<g filter="url(#filter3_f_49_11)">
+<ellipse cx="1344.5" cy="1137.15" rx="1352.5" ry="405.996" fill="url(#paint0_linear_49_11)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_49_11" x="-172" y="36" width="3065" height="2025.03" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="90" result="effect1_foregroundBlur_49_11"/>
+</filter>
+<filter id="filter1_f_49_11" x="-172" y="146.972" width="3065" height="2025.03" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="90" result="effect1_foregroundBlur_49_11"/>
+</filter>
+<filter id="filter2_f_49_11" x="-172" y="369.455" width="3065" height="1395.25" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="90" result="effect1_foregroundBlur_49_11"/>
+</filter>
+<filter id="filter3_f_49_11" x="-188" y="551.153" width="3065" height="1171.99" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="90" result="effect1_foregroundBlur_49_11"/>
+</filter>
+<linearGradient id="paint0_linear_49_11" x1="1344.5" y1="731.153" x2="1344.5" y2="1543.14" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E65313"/>
+<stop offset="0.507481" stop-color="#ED3B3B"/>
+<stop offset="1" stop-color="#3B0CA8" stop-opacity="0.45"/>
+</linearGradient>
+<clipPath id="clip0_49_11">
+<rect width="2704" height="2207" fill="white"/>
+</clipPath>
+</defs>
+</svg>
