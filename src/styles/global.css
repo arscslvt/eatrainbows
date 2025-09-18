@@ -247,4 +247,17 @@
       --cy2: 60%;
     }
   }
+
+  .border-overlay {
+    overflow: hidden;
+  }
+  .border-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 3px solid white;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay; /* Questo applica il filtro overlay */
+  }
 }

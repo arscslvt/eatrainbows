@@ -3,11 +3,10 @@ import { Button } from "@/components/ui/button";
 import MainLayout from "../layouts/Main.layout.astro";
 import { Image } from "astro:assets";
 
-import MainRadialBackground from "../assets/backgrounds/radial-blue-orange.jpg";
-import MainPageUnicorn from "../assets/illustrations/visuals/unicorn.png";
-import MainPageShaderRaster from "../assets/backgrounds/shader-raster.png";
+import Shades from "@/components/shades.astro";
 
-import ArrowPath from "@/components/svg/ArrowPath.astro";
+import MainPageUnicorn from "../assets/illustrations/visuals/unicorn.png";
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 ---
 
@@ -17,7 +16,7 @@ import ArrowPath from "@/components/svg/ArrowPath.astro";
       class="h-[calc(100dvh-theme(space.28))] flex items-center justify-center pt-4 space-x-12 relative z-10"
     >
       <div
-        class="relative z-10 flex flex-1 flex-col justify-end items-center gap-12 md:mx-36 lg:mx-64 px-12"
+        class="relative z-10 flex flex-1 flex-col justify-end items-center gap-12 mx-0 md:mx-36 lg:mx-64 md:px-12"
       >
         <div class="flex flex-col gap-4 items-center">
           <div
@@ -26,7 +25,7 @@ import ArrowPath from "@/components/svg/ArrowPath.astro";
             OUR BEST
           </div>
           <h1
-            class="font-branding font-medium text-3xl md:text-4xl text-center whitespace-nowrap"
+            class="font-branding font-medium text-2xl sm:text-3xl md:text-4xl text-center whitespace-nowrap"
           >
             We can see your
             <span class="inline text-mesh mesh-1">dreams</span><br /> and make it
@@ -47,51 +46,39 @@ import ArrowPath from "@/components/svg/ArrowPath.astro";
         </div>
       </div>
       <div class="absolute w-dvw h-36 -bottom-16 z-0">
-        <div
-          class="absolute h-40 w-full -translate-y-10 rounded-[50%] bg-[#F7BCB1] blur-2xl"
-        >
-        </div>
-        <div
-          class="absolute h-40 w-full -translate-y-5 rounded-[50%] bg-[#7176FB] blur-2xl"
-        >
-        </div>
-        <div
-          class="absolute h-40 w-full translate-y-5 rounded-[50%] bg-[#3C7AF6] blur-2xl"
-        >
-        </div>
-        <div
-          class="absolute h-32 w-full translate-y-0 rounded-[50%] bg-[#E33776] blur-2xl z-[10]"
-        >
-        </div>
-        <div
-          class="absolute h-40 w-full translate-y-15 rounded-[50%] bg-[#3C7AF6] blur-2xl"
-        >
-        </div>
-        <div
-          class="absolute h-40 w-full -translate-y-20 rounded-[50%] bg-[#7176FB] blur-2xl"
-        >
-        </div>
+        <Shades />
       </div>
     </div>
 
     <div
-      class="flex-1 space-y-6 isolate rounded-[22px] px-12 lg:mx-64 relative z-10"
+      class="flex-1 space-y-6 isolate rounded-[22px] px-6 md:px-12 lg:mx-54 xl:64 relative z-10"
     >
       <div class="relative z-10 flex flex-col md:flex-row h-full gap-6">
         <div
-          class="relative w-full rounded-xl bg-[#F5F1EE]/20 border border-white/20 flex-1 pointer-events-none select-none z-10"
+          class="relative w-full bg-[#F5F1EE]/40 backdrop-blur-2xl rounded-xl flex-1 pointer-events-none select-none z-10"
         >
-          <div class="relative flex flex-row h-full">
+          <div
+            class="absolute inset-0 w-full h-full border-overlay rounded-xl after:rounded-xl after:opacity-80 overflow-hidden"
+          >
+            <Shades
+              className="inset-0 w-full h-full z-0 scale-200 rotate-z-180"
+            />
+          </div>
+          <div
+            class="relative flex flex-col sm:flex-row gap-6 sm:gap-0 h-full z-10"
+          >
             <div class="relative flex flex-1 flex-col p-9 space-y-6">
               <h1 class="font-branding font-medium text-4xl text-white">
                 We love making<br />you shine
               </h1>
-              <p class="text-white text-lg font-normal brightness-200">
+              <p
+                class="text-white text-lg font-normal opacity-70 mix-blend-overlay"
+              >
                 that's why we have a unicorn as a mascot,<br />we need sparkles.
               </p>
             </div>
 
-            <div class="flex items-center justify-center">
+            <div class="relative flex items-center justify-center z-20">
               <Image
                 src={MainPageUnicorn}
                 alt="Unicorn Mascot"
@@ -106,7 +93,7 @@ import ArrowPath from "@/components/svg/ArrowPath.astro";
         class="relative w-full h-22 sm:h-14 bg-[#F5F1EE]/20 border border-white/20 overflow-hidden rounded-xl pointer-events-none select-none z-10"
       >
         <div
-          class="relative z-10 flex flex-row flex-wrap px-6 py-4 gap-2 sm:gap-8 justify-around items-center h-full font-medium text-sm md:text-base text-white font-branding"
+          class="relative z-10 flex flex-row flex-wrap px-6 py-4 gap-2 sm:gap-8 justify-around items-center h-full font-medium text-sm md:text-base text-foreground font-branding"
         >
           <span>websites</span>
           <span>apps</span>
