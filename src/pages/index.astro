@@ -17,68 +17,70 @@ import ArrowPath from "@/components/svg/ArrowPath.astro";
       class="h-[calc(100dvh-theme(space.28))] flex items-center justify-center pt-4 space-x-12 relative z-10"
     >
       <div
-        class="flex flex-1 flex-col justify-end items-start gap-6 md:mx-36 lg:mx-64 px-12"
+        class="relative z-10 flex flex-1 flex-col justify-end items-center gap-12 md:mx-36 lg:mx-64 px-12"
       >
-        <div class="space-y-4">
+        <div class="flex flex-col gap-4 items-center">
           <div
-            class="px-4 h-10 rounded-full border-2 border-rose-400 md:text-lg font-medium w-max flex items-center mesh-3 text-mesh"
+            class="px-4 h-8 rounded-full border border-rose-400 md:text-base w-max flex items-center mesh-3 text-mesh"
           >
-            OUR SPECIALITY
+            OUR BEST
           </div>
-          <h1 class="font-branding font-medium text-5xl md:text-6xl">
+          <h1
+            class="font-branding font-medium text-3xl md:text-4xl text-center whitespace-nowrap"
+          >
             We can see your
-            <br />
-            <span class="text-mesh mesh-1">dreams</span> and make<br /> it real.
+            <span class="inline text-mesh mesh-1">dreams</span><br /> and make it
+            real.
           </h1>
         </div>
-        <div class="w-full space-y-3">
-          <p class="text-neutral-500 text-xl text-right">
-            You’ll get a free mockup.<br />
-            Pay it only <span class="italic">if you like it</span>.
+        <div class="w-full space-y-3 flex flex-col items-center">
+          <p class="text-muted-foreground text-sm text-center">
+            Tell us what do you want to build for your business.<br />You’ll get
+            a free mockup. Pay it only <span class="italic">if you like it</span
+            >.
           </p>
-          <div class="pt-4">
-            <Button
-              variant="mesh"
-              className="w-full h-14 mesh-2 rounded-[22px]"
-              style={{ boxShadow: "0 0 0px 6px rgba(255, 255, 255, 0.6)" }}
+          <div>
+            <Button variant="mesh" className="px-18 h-14 mesh-2 rounded-[32px]"
               >Get a Free Consultation</Button
             >
           </div>
         </div>
       </div>
-      <div
-        class="absolute w-dvw h-36 md:h-80 bottom-0 md:bottom-44 left-0 right-0 z-0"
-      >
-        <Image
-          src={MainPageShaderRaster}
-          alt="Unicorn Mascot"
-          srcset=""
-          class="w-100% h-36 md:h-100% object-cover md:object-fill object-top md:object-center origin-center pointer-events-none select-none"
-        />
+      <div class="absolute w-dvw h-36 -bottom-16 z-0">
+        <div
+          class="absolute h-40 w-full -translate-y-10 rounded-[50%] bg-[#F7BCB1] blur-2xl"
+        >
+        </div>
+        <div
+          class="absolute h-40 w-full -translate-y-5 rounded-[50%] bg-[#7176FB] blur-2xl"
+        >
+        </div>
+        <div
+          class="absolute h-40 w-full translate-y-5 rounded-[50%] bg-[#3C7AF6] blur-2xl"
+        >
+        </div>
+        <div
+          class="absolute h-32 w-full translate-y-0 rounded-[50%] bg-[#E33776] blur-2xl z-[10]"
+        >
+        </div>
+        <div
+          class="absolute h-40 w-full translate-y-15 rounded-[50%] bg-[#3C7AF6] blur-2xl"
+        >
+        </div>
+        <div
+          class="absolute h-40 w-full -translate-y-20 rounded-[50%] bg-[#7176FB] blur-2xl"
+        >
+        </div>
       </div>
     </div>
 
     <div
-      class="flex-1 relative space-y-6 isolate rounded-[22px] px-12 lg:mx-64"
+      class="flex-1 space-y-6 isolate rounded-[22px] px-12 lg:mx-64 relative z-10"
     >
       <div class="relative z-10 flex flex-col md:flex-row h-full gap-6">
-        <!-- <div
-          class="relative w-full rounded-xl flex-1 pointer-events-none select-none z-10"
-        >
-          <div class="relative">
-            <ArrowPath />
-          </div>
-        </div> -->
         <div
           class="relative w-full rounded-xl bg-[#F5F1EE]/20 border border-white/20 flex-1 pointer-events-none select-none z-10"
         >
-          <!-- <Image
-            src={MainRadialBackground}
-            priority
-            alt="Radial Blue Orange Background"
-            srcset=""
-            class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none rounded-[12px]"
-          /> -->
           <div class="relative flex flex-row h-full">
             <div class="relative flex flex-1 flex-col p-9 space-y-6">
               <h1 class="font-branding font-medium text-4xl text-white">
