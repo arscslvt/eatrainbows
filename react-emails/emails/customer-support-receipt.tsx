@@ -17,7 +17,15 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "";
 
-export const CustomerSupportReceipt = () => (
+interface CustomerSupportReceiptProps {
+  customerName?: string;
+  customerRequestId?: string;
+}
+
+export const CustomerSupportReceipt = ({
+  customerName,
+  customerRequestId,
+}: CustomerSupportReceiptProps) => (
   <Tailwind
     config={{
       presets: [pixelBasedPreset],
@@ -46,7 +54,7 @@ export const CustomerSupportReceipt = () => (
             />
             <Hr style={hr} />
             <Text style={paragraph}>
-              Hi there,
+              Hi {customerName ?? "there"} 👋,
               <br />
               Thank you for reaching out to EatRainbows! 🌟
             </Text>
@@ -54,6 +62,23 @@ export const CustomerSupportReceipt = () => (
               We’ve received your request and we’re excited to learn more about
               your vision.
             </Text>
+            {customerRequestId && (
+              <Section>
+                <Text
+                  style={paragraph}
+                  className="my-0 px-2 py-1 pb-1 bg-zinc-100"
+                >
+                  <span className="text-sm">Your request ID is:</span>&nbsp;
+                  <span className={"text-sm font-medium font-mono"}>
+                    {customerRequestId}
+                  </span>
+                </Text>
+                <Text className="my-0 mt-1 text-xs text-[#71717B]">
+                  Please keep this ID for your records. It will help us assist
+                  you more efficiently.
+                </Text>
+              </Section>
+            )}
             <Text style={paragraph}>
               Our team will review your message and get back to you shortly with
               ideas on how we can bring your business online in the most
@@ -71,7 +96,7 @@ export const CustomerSupportReceipt = () => (
             <Hr style={hr} />
           </Section>
           <Footer />
-          <Text style={footer} className="text-center">
+          <Text style={footer} className="text-center px-2">
             EatRainbows is a team of passionate designers and developers from
             southern Italy
             <br />
@@ -83,10 +108,15 @@ export const CustomerSupportReceipt = () => (
   </Tailwind>
 );
 
+CustomerSupportReceipt.PreviewProps = {
+  customerName: "Salvatore",
+  customerRequestId: "123456789",
+};
+
 export default CustomerSupportReceipt;
 
 const main = {
-  backgroundColor: "#F5F1EE",
+  backgroundColor: "#C6D2FF",
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
 };

@@ -6,12 +6,13 @@ import { Image } from "astro:assets";
 import Shades from "@/components/Shades.astro";
 
 import MainPageUnicorn from "../assets/illustrations/visuals/unicorn.png";
+import ContactForm from "@/components/contact-form.tsx";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 ---
 
 <MainLayout>
-  <div class="gap-16 pb-6">
+  <div class="gap-16 pb-24">
     <div
       class="h-[calc(100dvh-theme(space.28))] flex items-center justify-center pt-4 space-x-12 relative z-10"
     >
@@ -51,7 +52,7 @@ import MainPageUnicorn from "../assets/illustrations/visuals/unicorn.png";
     </div>
 
     <div
-      class="flex-1 space-y-6 isolate rounded-[22px] px-6 md:px-12 lg:mx-54 xl:64 relative z-10"
+      class="flex-1 space-y-8 isolate px-6 md:px-12 lg:mx-54 xl:64 relative z-10"
     >
       <div class="relative z-10 flex flex-col md:flex-row h-full gap-6">
         <div
@@ -89,6 +90,7 @@ import MainPageUnicorn from "../assets/illustrations/visuals/unicorn.png";
           </div>
         </div>
       </div>
+
       <div
         class="relative w-full h-22 sm:h-14 bg-[#F5F1EE]/20 border border-white/20 overflow-hidden rounded-xl pointer-events-none select-none z-10"
       >
@@ -100,6 +102,20 @@ import MainPageUnicorn from "../assets/illustrations/visuals/unicorn.png";
           <span>mockups</span>
           <span>consulting</span>
         </div>
+      </div>
+
+      <div></div>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center gap-2">
+        <span class="text-muted-foreground">Do you have a dream?</span>
+        <h2 class="font-branding font-semibold text-center text-3xl">
+          Let's fill the form<br />to make it real
+        </h2>
+      </div>
+      <div class="pt-6">
+        <ContactForm client:idle />
       </div>
     </div>
   </div>

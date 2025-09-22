@@ -40,24 +40,11 @@ export const Footer = () => {
                   />
                 </Link>
               </Column>
-              {/* <Column>
-                <Link href="#">
-                  <Img
-                    alt="Instagram"
-                    height="36"
-                    src="https://react.email/static/instagram-logo.png"
-                    width="36"
-                  />
-                </Link>
-              </Column> */}
             </Row>
           </td>
         </tr>
         <tr>
           <td align="center">
-            <Text className="my-[8px] font-medium text-[16px] text-gray-500 leading-[24px]">
-              Catania, we don't have an HQ yet :)
-            </Text>
             <Text className="mt-[4px] mb-0 font-medium text-[16px] text-gray-500 leading-[24px]">
               hello@eatrainbows.co — +39 338 112 6750
             </Text>
