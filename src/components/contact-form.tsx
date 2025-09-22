@@ -10,7 +10,13 @@ import {
 import { Button } from "./ui/button";
 import { ArrowRight } from "@phosphor-icons/react";
 
-export default function ContactForm() {
+export default function ContactForm({
+  content,
+  hideIcon,
+}: {
+  content?: string;
+  hideIcon?: boolean;
+}) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   useEffect(() => {
@@ -30,8 +36,13 @@ export default function ContactForm() {
     <div className="w-full flex justify-center">
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <Button variant={"mesh"} className="mesh-2 !px-12 h-14 rounded-full">
-            Fill the form <ArrowRight />
+          <Button
+            variant={"mesh"}
+            className="!px-18 h-14 mesh-2 rounded-[32px]"
+            id="contact-button"
+          >
+            {content ?? "Fill the form"}
+            {!hideIcon && <ArrowRight />}
           </Button>
         </DialogTrigger>
         <DialogContent className="flex flex-col !w-dvw sm:w-3/4 sm:h-4/5 sm:!max-w-4/5 bg-background/80 backdrop-blur-2xl p-0 rounded-xl">
